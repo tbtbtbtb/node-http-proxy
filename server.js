@@ -3,5 +3,5 @@ var httpProxy = require('./lib/http-proxy');
 var proxy = httpProxy.createProxyServer({});
 
 http.createServer(function(req, res) {
-    proxy.web(req, res, { target: 'http://10.23.178.130' });
+    proxy.web(req, res, { target: process.env.CAMERA_IP_ADDRESS });
 }).listen(8080);
